@@ -59,7 +59,7 @@ class Solution:
                     mode += 1 
                 else:
                     pass
-        final_string = "first name = {0}, last name = {1}, id = {2}".format(f_name,l_name,num)
+        final_string = "First name = {0}, Last name = {1}, id = {2}".format(f_name,l_name,num)
         return final_string
 
                 
