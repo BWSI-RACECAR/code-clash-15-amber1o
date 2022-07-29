@@ -39,19 +39,30 @@ class Solution:
         # TODO: Write code below to return a string with the solution to the prompt
         f_name= ""
         l_name = ""
-        id = ""
+        num = ""
+        mode = 1
 
         for i in range(len(id)): 
-            if id[i].isalpha():
-                f_name += id[i]
-            elif i == "0": 
-                if id[i] != "0":
-                    if id[i].isalpha():
+            if id[i] != "0":
+                if mode ==1:
+                    f_name += id[i]
+                elif mode ==2:
+                    if id[i].isnumeric():
+                        mode = 3
+                        num += id[i]
+                    else:
                         l_name += id[i]
-                    elif id[i].isnumeric() and id[i] != 0:
-                        id += id[i] 
-        decoded = print(f_name + ", " + l_name + ", " + id)
-        return decoded
+                else:
+                    num += id[i]
+            else:
+                if id[i-1 ] != "0":
+                    mode += 1 
+                else:
+                    pass
+        final_string = "first name = {0}, last name = {1}, id = {2}".format(first_name,last_name,number)
+        return final_string
+
+                
             
 
 
